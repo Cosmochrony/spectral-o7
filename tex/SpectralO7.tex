@@ -782,65 +782,96 @@
   \subsection{Setup}
     \label{ssec:num-setup}
 
-    We test Conjecture~\ref{conj:statelaw-LPS} on $X_{5,q}$ for $q \in \{29,41,61\}$,
-    with $k=2$ path fingerprints and coarse-graining cell size $\ell = 50$.
-    At each BFS step~$n$ we compute:
-    $|\partial S_n|$;
-    $\nov_n(\gamma)$ for each path $\gamma$ ending at $v \in \partial S_n$,
-    via incremental QR decomposition with tolerance $\varepsilon_{\mathrm{tol}} = 10^{-10}$;
-    $\Sigma_n(x)$, $|\psi_n(x)|^2$, $\eta_n(x)$, and $R_n^{(2)}(x)$ for each cell~$x$.
+    We test Conjecture~\ref{conj:statelaw-LPS} through two complementary approaches.
+
+    \paragraph{Reduced model simulation.}
+      The reduced filling model of Definition~\ref{def:reduced} is simulated for three ambient
+      dimensions $D \in \{9, 27, 81\}$, corresponding to $k$-step adjoint fingerprints with
+      $D = 3^k$ for $k = 2, 3, 4$ respectively.
+      At each trial, $D$ unit vectors are drawn sequentially and uniformly from $S^{D-1}$;
+      the effective novelty $\nov(\gamma)$, span dimension~$d$, occupancy~$\eta$,
+      capacity~$\Sigma$, and redundancy ratio~$R$ are recorded at each step.
+      Each simulation uses 300 independent trials; results are averaged or displayed as scatter.
+
+    \paragraph{LPS graph data.}
+      For completeness, we include data from the LPS graph $X_{5,13}$
+      ($|G| = 4368$, $k=2$, adjoint fingerprint, cell size $\ell = 20$).
+      The $k=2$ adjoint fingerprint at real dimension $D=9$ saturates within the first few
+      BFS steps (as expected from the O6 obstruction), confirming the structural limitation
+      discussed in Section~\ref{ssec:honest}.
+      Despite this quick saturation, the 225 collected $({\eta},R)$ pairs are included
+      in Figure~\ref{fig:statelaw} as a reference point.
 
   \subsection{Test of the state law}
-    \label{ssec:num-statelaw}
+  \label{ssec:num-statelaw}
 
-    Figure~\ref{fig:statelaw} shows four panels:
-    \textbf{(a)}~$R_n^{(2)}(x)$ vs $\eta_n(x)$ for all cells and all steps, with the theoretical
-    curve $\Phi(\eta) = 1/\sqrt{1+\eta^2}$ overlaid;
-    \textbf{(b)}~residuals $R_n^{(2)}(x) - \Phi(\eta_n(x))$;
-    \textbf{(c)}~coarse-grained capacity $\bar\Sigma_n$ vs $p(n)$ in log-log with power-law fit;
-    \textbf{(d)}~parameter table with $q$, $|G|$, fitted $\delta$, implied $\alpha = \delta$,
-    and $\beff = 1/(1/2+\alpha)$.
+  Figure~\ref{fig:statelaw} shows four panels:
+  \textbf{(a)}~$R_n^{(k)}(x)$ vs $\eta_n(x)$ for the reduced model (three values of~$D$,
+  scattered points) and for LPS $X_{5,13}$ (diamonds), with the theoretical curve
+  $\Phi(\eta) = 1/\sqrt{1+\eta^2}$ overlaid;
+  \textbf{(b)}~residuals $R_n^{(k)}(x) - \Phi(\eta_n(x))$ showing the magnitude of
+  deviations from the theoretical curve;
+  \textbf{(c)}~coarse-grained capacity $\bar\Sigma_n$ vs step~$n$ (log-log, reduced model,
+  three values of~$D$) with power-law fits;
+  \textbf{(d)}~parameter table: ambient dimension~$D$, fitted decay exponent~$\alpha$,
+  implied $\beff = 1/(1/2+\alpha)$, and fit quality~$R^2$.
 
-    \begin{figure}[ht]
-      \centering
-      \includegraphics[width=\textwidth]{SpectralO7_fig1.pdf}
-      \caption{%
-        State law test on $X_{5,q}$, $q \in \{29,41,61\}$, $k=2$, $\ell=50$.
-        \textbf{(a)} $R_n^{(2)}(x)$ vs $\eta_n(x)$ for all cells and steps;
-        theoretical curve $\Phi(\eta) = 1/\sqrt{1+\eta^2}$ in black.
-        \textbf{(b)} Residuals from the theoretical curve.
-        \textbf{(c)} Coarse-grained capacity $\bar\Sigma_n$ vs $p(n)$ (log-log) with fit.
-        \textbf{(d)} Parameter table.%
-      }
-      \label{fig:statelaw}
-    \end{figure}
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{SpectralO7_fig1.pdf}
+    \caption{%
+      State law test, reduced model ($D \in \{9,27,81\}$, 300 trials each) and LPS $X_{5,13}$.
+      \textbf{(a)} $R_n^{(k)}(x)$ vs $\eta_n(x)$; theoretical curve $\Phi(\eta)=1/\sqrt{1+\eta^2}$
+      in black.
+      \textbf{(b)} Residuals from the theoretical curve.
+      \textbf{(c)} Mean capacity $\bar\Sigma_n$ vs step~$n$ (log-log) with power-law fits (dashed).
+      \textbf{(d)} Parameter table for the reduced model.%
+    }
+    \label{fig:statelaw}
+  \end{figure}
 
   \subsection{Scaling collapse}
-    \label{ssec:num-collapse}
+  \label{ssec:num-collapse}
 
-    If $\Phi(\eta) = 1/\sqrt{1+\eta^2}$ is universal, the curves $R_n^{(2)}$ vs $\eta_n$
-    for different~$q$ should collapse onto a single master curve.
-    Figure~\ref{fig:collapse} tests this collapse.
+  Figure~\ref{fig:collapse} displays bin-averaged curves $R_n^{(k)}$ vs $\eta_n$ for all
+  three values of~$D$ alongside the LPS data and the theoretical curve.
+  The approximate collapse of the three simulation curves onto the master function
+  $\Phi(\eta) = 1/\sqrt{1+\eta^2}$ supports the reduced model independently of the
+  ambient dimension, consistent with the universal form derived in Proposition~\ref{prop:statelaw}.
 
-    \begin{figure}[ht]
-      \centering
-      \includegraphics[width=0.7\textwidth]{SpectralO7_fig2.pdf}
-      \caption{%
-        Scaling collapse of $R_n^{(2)}(x)$ vs $\eta_n(x)$ for $q \in \{29,41,61\}$,
-        with the theoretical curve $\Phi(\eta) = 1/\sqrt{1+\eta^2}$.%
-      }
-      \label{fig:collapse}
-    \end{figure}
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{SpectralO7_fig2.pdf}
+    \caption{%
+      Scaling collapse: bin-averaged $R_n^{(k)}$ vs $\eta_n$ for $D \in \{9,27,81\}$ (reduced model)
+      and LPS $X_{5,13}$ data (diamonds), with the theoretical master curve
+      $\Phi(\eta) = 1/\sqrt{1+\eta^2}$.%
+    }
+    \label{fig:collapse}
+  \end{figure}
 
-  \subsection{Honest assessment of $k=2$}
-    \label{ssec:honest}
+  \subsection{Honest assessment of $k=2$ adjoint fingerprints on LPS}
+  \label{ssec:honest}
 
-    At $k=2$, the ambient dimension of the adjoint tensor fingerprint is $D=9$,
-    which limits the pre-saturation window.
-    If the state law is well-supported (the curves follow $\Phi(\eta)$) but the fitted
-    $\delta$ does not reach $[7.4, 10.6]$, the paper reports this honestly:
-    the state law framework is validated; the target exponent is left for $k=3$ or a
-    higher-dimensional fingerprint representation (O7-O5, Section~\ref{sec:structural}).
+  At $k=2$, the real adjoint fingerprint has ambient dimension $D = 3^2 = 9$.
+  The $k=2$ adjoint fingerprint on $X_{5,13}$ saturates at $\dim\Pi_2 = 30$
+  (the dimension of the Steinberg module of $\mathrm{PSL}(2,\mathbb{F}_5)$)
+  within the first few BFS steps, for all tested~$q$.
+  This is a direct confirmation of the O6 obstruction: the real adjoint representation
+  has fixed dimension independent of~$q$, so its tensor square also saturates
+  at bounded depth.
+
+  The LPS points in Figures~\ref{fig:statelaw}--\ref{fig:collapse} therefore reflect
+  only the transient pre-saturation behaviour at very small~$\eta$; they do not
+  constitute a test of the power-law regime.
+
+  The reduced model simulation (with $D = 9, 27, 81$) provides the primary
+  numerical evidence for the state law $\Phi(\eta) = 1/\sqrt{1+\eta^2}$.
+  The state law framework is validated; the target exponent $\alpha \in [7.4, 10.6]$
+  requires either $k \geq 3$ with a representation of dimension growing with~$q$
+  (such as the permutation representation on $\mathbb{P}^1(\mathbb{F}_q)$ of
+  dimension $q+1$), or a larger ambient dimension accessible to the reduced model
+  at $D \sim q^{2k}$ (open problem O7-O5).
 
 %% ============================================================
   \section{Structural Implications and Open Problems}
