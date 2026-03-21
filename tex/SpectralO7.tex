@@ -81,8 +81,11 @@
     $R_n^{(k)}(x) \approx \Phi(\eta_n(x))$,
     where $\Phi(\eta) = 1/\sqrt{1+\eta^2}$ satisfies $\Phi(0)=1$, $\Phi(\eta)\to 0$ as
     $\eta \to \infty$, and $\Phi' < 0$.
-    We support this numerically on LPS graphs $X_{5,q}$, $q \in \{29,41,61\}$, and show
-    that $\beta$ can be reread as the exponent governing the growth of~$\Sigma_n$ along the cascade.
+    Numerical support is provided by reduced-model simulations for ambient dimensions
+    $D \in \{9,27,81\}$ (corresponding to $k=2,3,4$ adjoint fingerprints), with the LPS graph
+    $X_{5,13}$ included as a reference confirming the bounded-depth pre-saturation predicted by O6.
+    We show that $\beta$ can be reread as the exponent governing the growth of~$\Sigma_n$
+    along the cascade.
     The Gross--Pitaevskii coupling of B.14 is then identified as the continuum image of the
     discrete saturation pressure $\gamma\eta_n\psi_n$.
 
@@ -95,12 +98,13 @@
     determined by the framework.
   \end{abstract}
 
+  \clearpage
   \tableofcontents
 
-%% ============================================================
+  \clearpage
+
   \section{Introduction}
     \label{sec:intro}
-%% ============================================================
 
     \subsection{The hierarchy of obstructions O4--O6}
       \label{ssec:hierarchy}
@@ -110,26 +114,26 @@
       $\beta$, defined by the growth law $p(n) \sim n^\beta$ of the effective relational valence
       along the BFS cascade on LPS Ramanujan graphs $X_{p,q}$?
       The phenomenological window $\beta^* \in (0.09, 0.13)$ is fixed by the charged lepton
-      mass ratios in O3~\cite{SpectralO3}.
+      mass ratios in O3~\cite{Beau2026a7}.
       Three successive structural results have been established.
 
-      \paragraph{O4~\cite{SpectralO4}.}
+      \paragraph{O4~\cite{Beau2026a8}.}
         The bounded-flux constraint $|\partial_t\chi_v| \leq c_\chi$, inherited from Born--Infeld
         saturation, combined with the Cheeger isoperimetric inequality for Ramanujan--LPS graphs,
         gives $\Delta p(n) \lesssim c_\chi\sqrt{p(n)}$, hence the structural upper bound $\beta \leq 1$
-        (in the rescaled convention of~\cite{SpectralO4}).
+        (in the rescaled convention of~\cite{Beau2026a8}).
         This bound excludes super-quadratic growth but does not explain the gap to $\beta^* \approx 0.10$.
 
-      \paragraph{O5~\cite{SpectralO5}.}
+      \paragraph{O5~\cite{Beau2026a9}.}
         The vertex-based admissible span satisfies $\dim\Pi_A(S_n) \leq |\mathrm{Cl}(G)| = O(q)$,
         giving a saturation threshold $|S^*| = O(q)$ beyond which no vertex contributes a new
         admissible direction.
         No vertex-level mechanism can produce $R_n \sim p(n)^{-\alpha}$.
 
-      \paragraph{O6~\cite{SpectralO6}.}
+      \paragraph{O6~\cite{Beau2026a10}.}
         The Steinberg-matrix fingerprint of ambient dimension $O(q^2)$ saturates at BFS depth~6
         for all $q \in \{29,41,61\}$, independent of~$q$.
-        Proposition~6.2 of~\cite{SpectralO6} proves the universal no-go: for any fixed
+        Proposition~6.2 of~\cite{Beau2026a10} proves the universal no-go: for any fixed
         finite-dimensional representation $\rho$, there exists $k^*(\rho,p) < \infty$, independent
         of~$q$, such that $\dim\Pi_\rho(S_n)$ stabilises for $n \geq k^*$.
         The mechanism is the Hecke operator action of the LPS generators $\Omega_p$ on
@@ -227,10 +231,8 @@
       redundancy functional a dynamics that can grow with the cascade.
     \end{remark}
 
-%% ============================================================
   \section{Background and Notation}
   \label{sec:background}
-%% ============================================================
 
   \subsection{Path fingerprints}
     \label{ssec:pf}
@@ -264,21 +266,25 @@
       \label{tab:dict}
       \begin{tabular}{lll}
         \toprule
-        Continuous (B.14, \cite{Cosmochrony}) & Discrete (O7) & Role \\
+        Continuous (B.14, \cite{Cosmochrony}) & Discrete (O7)                                & Role
+        \\
         \midrule
-        $\Sigma(x,t) = \sum_n w_n A_n^{\max}$ & $\Sigma_n(x)$ & Local projective capacity \\
-        $|\psi(x,t)|^2$ & $|\psi_n(x)|^2 = |S_n\cap C_x|/|C_x|$ & Projected density \\
-        $\eta = |\psi|^2/\Sigma$ & $\eta_n(x) = |\psi_n(x)|^2/\Sigma_n(x)$ & Projective occupancy \\
-        $g = \gamma/\Sigma$ & $g_n(x) = \gamma/\Sigma_n(x)$ & Effective coupling \\
-        $g|\psi|^2\psi$ & $g_n\,|\psi_n|^2\psi_n = \gamma\eta_n\psi_n$ & Saturation pressure \\
+        $\Sigma(x,t) = \sum_n w_n A_n^{\max}$ & $\Sigma_n(x)$                                & Local projective capacity
+        \\
+        $|\psi(x,t)|^2$                       & $|\psi_n(x)|^2 = |S_n\cap C_x|/|C_x|$        & Projected density
+        \\
+        $\eta = |\psi|^2/\Sigma$              & $\eta_n(x) = |\psi_n(x)|^2/\Sigma_n(x)$      & Projective occupancy
+        \\
+        $g = \gamma/\Sigma$                   & $g_n(x) = \gamma/\Sigma_n(x)$                & Effective coupling
+        \\
+        $g|\psi|^2\psi$                       & $g_n\,|\psi_n|^2\psi_n = \gamma\eta_n\psi_n$ & Saturation pressure
+        \\
         \bottomrule
       \end{tabular}
     \end{table}
 
-%% ============================================================
   \section{Discrete Projective Capacity}
   \label{sec:Sigma}
-%% ============================================================
 
   \subsection{Effective novelty of a path}
     \label{ssec:novelty}
@@ -356,6 +362,8 @@
       In contrast, the \emph{global} capacity $\bar\Sigma_n = |\mathcal{L}|^{-1}\sum_x \Sigma_n(x)$
       can grow: as the BFS frontier expands to previously unvisited cells, new cells enter with
       $\Sigma_n(x) \approx 1$, potentially offsetting the local decay.
+      Here ``growth'' refers to the extension of the BFS frontier into fresh cells,
+      not to any local increase of capacity within an already-visited cell.
       The power-law $\bar\Sigma_n \sim p(n)^{-\delta}$ of Section~\ref{sec:beta} characterises
       the net result of these two competing effects.
       No contradiction arises between local monotone decay and global growth.
@@ -405,10 +413,8 @@
       as a measure of remaining independent projective directions.
     \end{remark}
 
-%% ============================================================
   \section{State Law in the Reduced Filling Model}
   \label{sec:statelaw}
-%% ============================================================
 
   \subsection{Reduced filling model}
     \label{ssec:reduced-model}
@@ -504,11 +510,11 @@
     \begin{center}
       \begin{tabular}{lll}
         \toprule
-        Regime & Discrete (O7) & Continuous (B.14) \\
+        Regime            & Discrete (O7)                         & Continuous (B.14)       \\
         \midrule
-        $\eta \ll 1$ & $R_n \approx 1$, BFS exploration free & Linear Schr\"{o}dinger \\
-        $\eta \lesssim 1$ & $R_n$ decreasing, power law possible & Gross--Pitaevskii \\
-        $\eta \to \infty$ & $R_n \to 0$, saturation & Projectability boundary \\
+        $\eta \ll 1$      & $R_n \approx 1$, BFS exploration free & Linear Schr\"{o}dinger  \\
+        $\eta \lesssim 1$ & $R_n$ decreasing, power law possible  & Gross--Pitaevskii       \\
+        $\eta \to \infty$ & $R_n \to 0$, saturation               & Projectability boundary \\
         \bottomrule
       \end{tabular}
     \end{center}
@@ -536,15 +542,13 @@
       the subject of open problem O7-O3.
     \end{remark}
 
-%% ============================================================
   \section{$\beta$ as a Capacity Growth Exponent}
   \label{sec:beta}
-%% ============================================================
 
   \subsection{Reinterpretation of the O6 scaling relation}
     \label{ssec:reinterp}
 
-    O6 establishes (Proposition~4.2 of~\cite{SpectralO6}): if $R_n \sim p(n)^{-\alpha}$ in
+    O6 establishes (Proposition~4.2 of~\cite{Beau2026a10}): if $R_n \sim p(n)^{-\alpha}$ in
     the pre-saturation window, then
     \begin{equation}
       \label{eq:beff}
@@ -636,10 +640,8 @@
       is left as an open problem.
     \end{remark}
 
-%% ============================================================
   \section{Saturation Pressure and Gross--Pitaevskii}
   \label{sec:pressure}
-%% ============================================================
 
   \subsection{Discrete saturation pressure}
     \label{ssec:pressure}
@@ -774,10 +776,8 @@
         the Helmholtz picture governs only the dilute projective limit.
       \end{remark}
 
-%% ============================================================
   \section{Numerical Experiments on $X_{5,q}$}
   \label{sec:numerical}
-%% ============================================================
 
   \subsection{Setup}
     \label{ssec:num-setup}
@@ -813,8 +813,20 @@
   deviations from the theoretical curve;
   \textbf{(c)}~coarse-grained capacity $\bar\Sigma_n$ vs step~$n$ (log-log, reduced model,
   three values of~$D$) with power-law fits;
-  \textbf{(d)}~parameter table: ambient dimension~$D$, fitted decay exponent~$\alpha$,
-  implied $\beff = 1/(1/2+\alpha)$, and fit quality~$R^2$.
+  \textbf{(d)}~parameter table: ambient dimension~$D$, fitted decay exponent,
+  implied $\beff$, and fit quality~$R^2$.
+
+  \begin{remark}[Notation convention for $\delta$ and $\alpha$]
+    \label{rem:delta-alpha}
+    Section~\ref{sec:beta} defines $\delta$ as the exponent in the capacity decay law
+    $\bar\Sigma_n \sim p(n)^{-\delta}$.
+    In the reduced model, where $p(n) = n$ (one step per trial), this coincides with the
+    exponent~$\alpha$ appearing in the redundancy decay $R_n \sim p(n)^{-\alpha}$:
+    both are the same power extracted from $\bar\Sigma_n \sim n^{-\alpha}$.
+    The parameter table of Figure~\ref{fig:statelaw}(d) reports this common exponent
+    as~$\alpha$ for consistency with the O6 notation; throughout the paper $\delta = \alpha$
+    in the reduced-model setting.
+  \end{remark}
 
   \begin{figure}[ht]
     \centering
@@ -853,13 +865,18 @@
   \subsection{Honest assessment of $k=2$ adjoint fingerprints on LPS}
   \label{ssec:honest}
 
-  At $k=2$, the real adjoint fingerprint has ambient dimension $D = 3^2 = 9$.
-  The $k=2$ adjoint fingerprint on $X_{5,13}$ saturates at $\dim\Pi_2 = 30$
-  (the dimension of the Steinberg module of $\mathrm{PSL}(2,\mathbb{F}_5)$)
-  within the first few BFS steps, for all tested~$q$.
-  This is a direct confirmation of the O6 obstruction: the real adjoint representation
-  has fixed dimension independent of~$q$, so its tensor square also saturates
-  at bounded depth.
+  At $k=2$, the real adjoint fingerprint $\pi_2(\gamma) = \Ad(s_1)\otimes\Ad(s_2)$
+  lives in $\mathbb{R}^{81}$ (vectorisation of a $9\times 9$ matrix):
+  the ambient space has dimension~81, but only 30 independent generator-pair directions
+  are accessible, since $\Omega_5$ has cardinality~6 giving $6\times 5 = 30$
+  non-backtracking pairs $(s_1,s_2)$.
+  On $X_{5,13}$, the span $\Pi_2(S_n)$ saturates at $\dim\Pi_2 = 30$
+  within the first few BFS steps: all 30 generator pairs are seen immediately,
+  each contributing one linearly independent direction in~$\mathbb{R}^{81}$,
+  after which no new directions can be added regardless of~$q$.
+  This is a direct confirmation of the O6 obstruction at this fingerprint level:
+  the span of generator-pair fingerprints is exhausted by the first BFS step,
+  leaving no pre-saturation window.
 
   The LPS points in Figures~\ref{fig:statelaw}--\ref{fig:collapse} therefore reflect
   only the transient pre-saturation behaviour at very small~$\eta$; they do not
@@ -873,10 +890,8 @@
   dimension $q+1$), or a larger ambient dimension accessible to the reduced model
   at $D \sim q^{2k}$ (open problem O7-O5).
 
-%% ============================================================
   \section{Structural Implications and Open Problems}
   \label{sec:structural}
-%% ============================================================
 
   \subsection{What O7 resolves}
     \label{ssec:resolves}
@@ -933,27 +948,29 @@
     \label{tab:hierarchy}
     \begin{tabular}{lll}
       \toprule
-      Paper & Mechanism & Status of $\beta$ \\
+      Paper     & Mechanism                  & Status of $\beta$                                 \\
       \midrule
-      O3 & Charged-lepton mass ratios & Phenomenological target $\beta^* \in (0.09,0.13)$ \\
-      O4 & Born--Infeld + Cheeger & Structural upper bound $\beta \leq 1$ \\
-      O5 & Vertex admissibility & Not measurable: O($q$) saturation \\
-      O6 & Steinberg-matrix & Not measurable: bounded-depth saturation; no-go \\
-      O7 & Capacity + state law & Reinterpreted as capacity growth exponent \\
-      O8 (open) & $k=3$ path fingerprints & Target: $\delta \in [7.4, 10.6]$ \\
+      O3        & Charged-lepton mass ratios & Phenomenological target $\beta^* \in (0.09,0.13)$ \\
+      O4        & Born--Infeld + Cheeger     & Structural upper bound $\beta \leq 1$             \\
+      O5        & Vertex admissibility       & Not measurable: O($q$) saturation                 \\
+      O6        & Steinberg-matrix           & Not measurable: bounded-depth saturation; no-go   \\
+      O7        & Capacity + state law       & Reinterpreted as capacity growth exponent         \\
+      O8 (open) & $k=3$ path fingerprints    & Target: $\delta \in [7.4, 10.6]$                  \\
       \bottomrule
     \end{tabular}
   \end{table}
 
-%% ============================================================
   \section{Conclusion}
   \label{sec:conclusion}
-%% ============================================================
+
 
   We have introduced the discrete projective capacity $\Sigma_n(x)$, built from the effective
   novelty of $k$-step path fingerprints, as the discrete microscopic counterpart of the
   continuous spectral admissible capacity $\Sigma(x,t)$ of Appendix~B.14 of the Cosmochrony
   white paper.
+  $\Sigma_n(x)$ is the only observable that survives the O6 obstruction: every fixed-dimension
+  fingerprint saturates, but the capacity --- defined as the average residual novelty weighted by
+  path independence --- remains meaningful and dynamical throughout the cascade.
   We have proved in the reduced filling model the state law $R_n^{(k)}(x) \approx \Phi(\eta_n(x))$
   with $\Phi(\eta) = 1/\sqrt{1+\eta^2}$, satisfying $\Phi(0)=1$, $\Phi(\eta)\to 0$,
   and $\Phi' < 0$, and supported it numerically on $X_{5,q}$.
@@ -987,10 +1004,9 @@
 
   \appendix
 
-%% ============================================================
   \section{Reduced Filling Model: Detailed Derivation}
   \label{app:reduced}
-%% ============================================================
+
 
   We give the algebraic details of Proposition~\ref{prop:statelaw}.
 
@@ -1010,10 +1026,9 @@
     $\alpha \in [7.4, 10.6]$ requires the full graph-theoretic structure.
   \end{remark}
 
-%% ============================================================
   \section{Coarse-Graining Construction}
   \label{app:coarse}
-%% ============================================================
+
 
   Given the BFS ordering $G = \{v_0 = e, v_1, v_2, \ldots\}$,
   cells of size~$\ell$ are $C_x = \{v_{x\ell}, \ldots, v_{(x+1)\ell-1}\}$ for $x = 0,1,\ldots$
@@ -1021,10 +1036,9 @@
   A $k$-step path $\gamma$ with terminal vertex $v$ is assigned to cell $C_x$ if $v \in C_x$.
   The BFS frontier within cell~$x$ is $\partial_{\mathrm{cell}} C_x = \{v \in C_x : v \in \partial S_n\}$.
 
-%% ============================================================
   \section{Companion Python Script}
   \label{app:python}
-%% ============================================================
+
 
   The companion script \texttt{SpectralO7.py} implements:
   \begin{enumerate}
@@ -1036,6 +1050,7 @@
     \item Power-law fit of $\bar\Sigma_n$ vs $p(n)$; extraction of $\delta$, $\alpha$, $\beff$.
   \end{enumerate}
 
+  \clearpage
   \begin{thebibliography}{99}
 
     \bibitem{Cosmochrony}
@@ -1044,39 +1059,39 @@
     Zenodo (2025).
     DOI: 10.5281/zenodo.17957510.
 
-    \bibitem{BornInfeld}
+    \bibitem{Beau2026c}
     J.~Beau,
     ``Bounded Relational Dynamics and the Structural Necessity of Born--Infeld Geometry,''
     Zenodo (2026).
     DOI: 10.5281/zenodo.18407505.
 
-    \bibitem{SpectralStratigraphy}
+    \bibitem{Beau2026a4}
     J.~Beau,
     ``Three Particle Generations and Mass Hierarchy from Spectral Stratigraphy,''
     Zenodo (2026).
     DOI: 10.5281/zenodo.19040490.
 
-    \bibitem{SpectralO3}
+    \bibitem{Beau2026a7}
     J.~Beau,
     ``Projective Dynamics and Mass Hierarchy: Hierarchical Amplification via Growing
     Relational Valence,''
     Zenodo (2026).
     DOI: 10.5281/zenodo.19076244.
 
-    \bibitem{SpectralO4}
+    \bibitem{Beau2026a8}
     J.~Beau,
     ``Subdiffusive Valence Growth under Bounded Relational Flux:
     Structural Derivation of the Cascade Exponent~$\beta$,''
     Zenodo (2026).
     DOI: 10.5281/zenodo.19101472.
 
-    \bibitem{SpectralO5}
+    \bibitem{Beau2026a9}
     J.~Beau,
     ``Vertex-Level Dynamic Redundancy and the Admissible Frontier Saturation,''
     Zenodo (2026).
     DOI: 10.5281/zenodo.XXXXXXX.
 
-    \bibitem{SpectralO6}
+    \bibitem{Beau2026a10}
     J.~Beau,
     ``Matrix-Level Dynamic Redundancy and the Structural Confinement
     of the Cascade Exponent~$\beta$,''
