@@ -98,51 +98,56 @@
     determined by the framework.
   \end{abstract}
 
-  \clearpage
-  \tableofcontents
+  \paragraph{Keywords.}
+    projective capacity, admissible redundancy, cascade exponent, nonlinear dynamics, continuum limit,
+    spectral admissibility, bounded-depth saturation, coarse-graining, non-injective projection,
+    Gross–Pitaevskii equation, effective coupling, emergent dynamics, capacity scaling
 
-  \clearpage
+    \clearpage
+    \tableofcontents
+
+    \clearpage
 
   \section{Introduction}
-    \label{sec:intro}
+  \label{sec:intro}
 
-    \subsection{The hierarchy of obstructions O4--O6}
-      \label{ssec:hierarchy}
+  \subsection{The hierarchy of obstructions O4--O6}
+    \label{ssec:hierarchy}
 
-      The O-series of papers in the Cosmochrony spectral cascade programme has pursued a single
-      structural question: what mechanism is responsible for the smallness of the cascade exponent
-      $\beta$, defined by the growth law $p(n) \sim n^\beta$ of the effective relational valence
-      along the BFS cascade on LPS Ramanujan graphs $X_{p,q}$?
-      The phenomenological window $\beta^* \in (0.09, 0.13)$ is fixed by the charged lepton
-      mass ratios in O3~\cite{Beau2026a7}.
-      Three successive structural results have been established.
+    The O-series of papers in the Cosmochrony spectral cascade programme has pursued a single
+    structural question: what mechanism is responsible for the smallness of the cascade exponent
+    $\beta$, defined by the growth law $p(n) \sim n^\beta$ of the effective relational valence
+    along the BFS cascade on LPS Ramanujan graphs $X_{p,q}$?
+    The phenomenological window $\beta^* \in (0.09, 0.13)$ is fixed by the charged lepton
+    mass ratios in O3~\cite{Beau2026a7}.
+    Three successive structural results have been established.
 
-      \paragraph{O4~\cite{Beau2026a8}.}
-        The bounded-flux constraint $|\partial_t\chi_v| \leq c_\chi$, inherited from Born--Infeld
-        saturation, combined with the Cheeger isoperimetric inequality for Ramanujan--LPS graphs,
-        gives $\Delta p(n) \lesssim c_\chi\sqrt{p(n)}$, hence the structural upper bound $\beta \leq 1$
-        (in the rescaled convention of~\cite{Beau2026a8}).
-        This bound excludes super-quadratic growth but does not explain the gap to $\beta^* \approx 0.10$.
+    \paragraph{O4~\cite{Beau2026a8}.}
+      The bounded-flux constraint $|\partial_t\chi_v| \leq c_\chi$, inherited from Born--Infeld
+      saturation, combined with the Cheeger isoperimetric inequality for Ramanujan--LPS graphs,
+      gives $\Delta p(n) \lesssim c_\chi\sqrt{p(n)}$, hence the structural upper bound $\beta \leq 1$
+      (in the rescaled convention of~\cite{Beau2026a8}).
+      This bound excludes super-quadratic growth but does not explain the gap to $\beta^* \approx 0.10$.
 
-      \paragraph{O5~\cite{Beau2026a9}.}
-        The vertex-based admissible span satisfies $\dim\Pi_A(S_n) \leq |\mathrm{Cl}(G)| = O(q)$,
-        giving a saturation threshold $|S^*| = O(q)$ beyond which no vertex contributes a new
-        admissible direction.
-        No vertex-level mechanism can produce $R_n \sim p(n)^{-\alpha}$.
+    \paragraph{O5~\cite{Beau2026a9}.}
+      The vertex-based admissible span satisfies $\dim\Pi_A(S_n) \leq |\mathrm{Cl}(G)| = O(q)$,
+      giving a saturation threshold $|S^*| = O(q)$ beyond which no vertex contributes a new
+      admissible direction.
+      No vertex-level mechanism can produce $R_n \sim p(n)^{-\alpha}$.
 
-      \paragraph{O6~\cite{Beau2026a10}.}
-        The Steinberg-matrix fingerprint of ambient dimension $O(q^2)$ saturates at BFS depth~6
-        for all $q \in \{29,41,61\}$, independent of~$q$.
-        Proposition~6.2 of~\cite{Beau2026a10} proves the universal no-go: for any fixed
-        finite-dimensional representation $\rho$, there exists $k^*(\rho,p) < \infty$, independent
-        of~$q$, such that $\dim\Pi_\rho(S_n)$ stabilises for $n \geq k^*$.
-        The mechanism is the Hecke operator action of the LPS generators $\Omega_p$ on
-        $\mathrm{End}(V_\rho)$, which spans the full endomorphism algebra within bounded depth.
+    \paragraph{O6~\cite{Beau2026a10}.}
+      The Steinberg-matrix fingerprint of ambient dimension $O(q^2)$ saturates at BFS depth~6
+      for all $q \in \{29,41,61\}$, independent of~$q$.
+      Proposition~6.2 of~\cite{Beau2026a10} proves the universal no-go: for any fixed
+      finite-dimensional representation $\rho$, there exists $k^*(\rho,p) < \infty$, independent
+      of~$q$, such that $\dim\Pi_\rho(S_n)$ stabilises for $n \geq k^*$.
+      The mechanism is the Hecke operator action of the LPS generators $\Omega_p$ on
+      $\mathrm{End}(V_\rho)$, which spans the full endomorphism algebra within bounded depth.
 
-        The logical consequence is unambiguous: overcoming the O6 obstruction requires a fingerprint
-        space that grows with BFS depth, or a genuinely dynamical memory mechanism.
-        O6, Corollary~4.4 sets the target precisely: construct a fingerprint with a power-law decay
-        $R_n \sim p(n)^{-\alpha}$, $\alpha \in [7.4, 10.6]$.
+      The logical consequence is unambiguous: overcoming the O6 obstruction requires a fingerprint
+      space that grows with BFS depth, or a genuinely dynamical memory mechanism.
+      O6, Corollary~4.4 sets the target precisely: construct a fingerprint with a power-law decay
+      $R_n \sim p(n)^{-\alpha}$, $\alpha \in [7.4, 10.6]$.
 
       \begin{remark}[Scope of O7 relative to O6]
         \label{rem:o7-scope}
@@ -152,84 +157,84 @@
         The obstruction is not circumvented but \emph{reinterpreted}: the bounded-depth saturation
         of O6 is the microscopic signature of a projective capacity exhaustion that, in the
         continuum limit, takes the form of the nonlinear dynamics of Appendix~B.14.
-        \end{remark}
+      \end{remark}
 
   \subsection{What Appendix~B.14 of the white paper brings}
-    \label{ssec:b14}
+  \label{ssec:b14}
 
-    Independently of the discrete O-series, Appendix~B.14 of the Cosmochrony white
-    paper~\cite{Cosmochrony} derives, in the continuous projected dynamics, the following
-    result starting from Proposition~B.1 of~\cite{Cosmochrony}:
-    \begin{equation}
-      \label{eq:schrodinger-eff}
-      i\heff\,\partial_t\psi = \Heff\psi + N_{\Pi,\mathrm{BI}}[\psi].
-    \end{equation}
-    In the regime of non-negligible projective occupancy $\eta = |\psi|^2/\Sigma \not\ll 1$,
-    where $\Sigma(x,t) = \sum_n w_n A_n^{\max}$ is the local spectral admissible capacity,
-    the leading correction is:
-    \begin{equation}
-      \label{eq:GP}
-      i\heff\,\partial_t\psi
-      = -\kappa\,\Delta_g\psi + V_{\mathrm{eff}}\psi
-      + \frac{\gamma}{\Sigma(x,t)}\,|\psi|^2\psi + O(|\psi|^4\psi).
-    \end{equation}
-    The coupling $g(x,t) = \gamma/\Sigma(x,t)$ is not postulated but derived from the finite local
-    admissible capacity.
-    B.14 identifies three regimes: $\eta \ll 1$ (linear Schr\"{o}dinger), $\eta \lesssim 1$
-    (Gross--Pitaevskii, possible soliton formation), $\eta \to 1$ (near-saturation boundary).
+  Independently of the discrete O-series, Appendix~B.14 of the Cosmochrony white
+  paper~\cite{Cosmochrony} derives, in the continuous projected dynamics, the following
+  result starting from Proposition~B.1 of~\cite{Cosmochrony}:
+  \begin{equation}
+    \label{eq:schrodinger-eff}
+    i\heff\,\partial_t\psi = \Heff\psi + N_{\Pi,\mathrm{BI}}[\psi].
+  \end{equation}
+  In the regime of non-negligible projective occupancy $\eta = |\psi|^2/\Sigma \not\ll 1$,
+  where $\Sigma(x,t) = \sum_n w_n A_n^{\max}$ is the local spectral admissible capacity,
+  the leading correction is:
+  \begin{equation}
+    \label{eq:GP}
+    i\heff\,\partial_t\psi
+    = -\kappa\,\Delta_g\psi + V_{\mathrm{eff}}\psi
+    + \frac{\gamma}{\Sigma(x,t)}\,|\psi|^2\psi + O(|\psi|^4\psi).
+  \end{equation}
+  The coupling $g(x,t) = \gamma/\Sigma(x,t)$ is not postulated but derived from the finite local
+  admissible capacity.
+  B.14 identifies three regimes: $\eta \ll 1$ (linear Schr\"{o}dinger), $\eta \lesssim 1$
+  (Gross--Pitaevskii, possible soliton formation), $\eta \to 1$ (near-saturation boundary).
 
-    These regimes at the continuous level have no explicit counterpart yet at the discrete BFS
-    level of O5--O6.
-    Constructing that counterpart is the objective of the present paper.
+  These regimes at the continuous level have no explicit counterpart yet at the discrete BFS
+  level of O5--O6.
+  Constructing that counterpart is the objective of the present paper.
 
   \subsection{Main results and scope}
-    \label{ssec:results}
+  \label{ssec:results}
 
-    O7 establishes the bridge between the discrete admissible redundancy of O5--O6 and the
-    continuous projective dynamics of B.14, with the following contributions.
+  O7 establishes the bridge between the discrete admissible redundancy of O5--O6 and the
+  continuous projective dynamics of B.14, with the following contributions.
 
-    \begin{enumerate}
-      \item \textbf{Discrete projective capacity $\Sigma_n(x)$} (Section~\ref{sec:Sigma}).
-      The capacity is built from the effective novelty of each $k$-step path fingerprint,
-      measured as its distance to the already-spanned subspace.
-      Its basic properties (non-negativity, monotone decay, boundary conditions) are proved.
+  \begin{enumerate}
+    \item \textbf{Discrete projective capacity $\Sigma_n(x)$} (Section~\ref{sec:Sigma}).
+    The capacity is built from the effective novelty of each $k$-step path fingerprint,
+    measured as its distance to the already-spanned subspace.
+    Its basic properties (non-negativity, monotone decay, boundary conditions) are proved.
 
-      \item \textbf{State law $R_n^{(k)}(x) \approx \Phi(\eta_n(x))$} (Section~\ref{sec:statelaw}).
-      The state law $\Phi(\eta) = 1/\sqrt{1+\eta^2}$ is derived exactly in a reduced filling model.
-      It satisfies $\Phi(0)=1$, $\Phi(\eta)\to 0$ as $\eta\to\infty$, and $\Phi'<0$,
-      matching the three qualitative regimes of B.14.
+    \item \textbf{State law $R_n^{(k)}(x) \approx \Phi(\eta_n(x))$} (Section~\ref{sec:statelaw}).
+    The state law $\Phi(\eta) = 1/\sqrt{1+\eta^2}$ is derived exactly in a reduced filling model.
+    It satisfies $\Phi(0)=1$, $\Phi(\eta)\to 0$ as $\eta\to\infty$, and $\Phi'<0$,
+    matching the three qualitative regimes of B.14.
 
-      \item \textbf{$\beta$ as capacity growth exponent} (Section~\ref{sec:beta}).
-      The O6 formula $\beff = 1/(1/2+\alpha)$ is reinterpreted: $\alpha$ is the exponent of
-      decay of the capacity $\Sigma_n \sim p(n)^{-\alpha}$, making $\beta$ a structural property
-      of the projective capacity dynamics.
+    \item \textbf{$\beta$ as capacity growth exponent} (Section~\ref{sec:beta}).
+    The O6 formula $\beff = 1/(1/2+\alpha)$ is reinterpreted: $\alpha$ is the exponent of
+    decay of the capacity $\Sigma_n \sim p(n)^{-\alpha}$, making $\beta$ a structural property
+    of the projective capacity dynamics.
 
-      \item \textbf{Saturation pressure and Gross--Pitaevskii} (Section~\ref{sec:pressure}).
-      The discrete saturation pressure $P_n^{\mathrm{sat}} = \gamma\eta_n$ is identified as the
-      microscopic ancestor of the B.14 coupling $g|\psi|^2\psi$, formally compatible with the
-      continuum limit.
-    \end{enumerate}
+    \item \textbf{Saturation pressure and Gross--Pitaevskii} (Section~\ref{sec:pressure}).
+    The discrete saturation pressure $P_n^{\mathrm{sat}} = \gamma\eta_n$ is identified as the
+    microscopic ancestor of the B.14 coupling $g|\psi|^2\psi$, formally compatible with the
+    continuum limit.
+  \end{enumerate}
 
-    \begin{remark}[Explicit scope limitation]
-      \label{rem:scope}
-      The state law $R_n^{(k)}(x) \approx \Phi(\eta_n(x))$ is established exactly in the reduced
-      occupancy model (Section~\ref{sec:statelaw}) and supported numerically on LPS graphs
-      (Section~\ref{sec:numerical}).
-      Its full graph-theoretic derivation on $X_{5,q}$ is left as an open problem (O7-O2 in
-      Section~\ref{sec:structural}).
-      The formal compatibility with B.14 is a structural identification, not a rigorous
-      continuum-limit proof (O7-O1).
-    \end{remark}
+  \begin{remark}[Explicit scope limitation]
+    \label{rem:scope}
+    The state law $R_n^{(k)}(x) \approx \Phi(\eta_n(x))$ is established exactly in the reduced
+    occupancy model (Section~\ref{sec:statelaw}) and supported numerically on LPS graphs
+    (Section~\ref{sec:numerical}).
+    Its full graph-theoretic derivation on $X_{5,q}$ is left as an open problem (O7-O2 in
+    Section~\ref{sec:structural}).
+    The formal compatibility with B.14 is a structural identification, not a rigorous
+    continuum-limit proof (O7-O1).
+  \end{remark}
 
-    \begin{remark}[Structural necessity of the coarse-grained capacity]
-      \label{rem:necessity}
-      The introduction of a coarse-grained capacity $\Sigma_n(x)$ is not optional.
-      Any attempt to characterise admissible redundancy at fixed representation level necessarily
-      leads to saturation within bounded BFS depth, as proved in O6, Proposition~6.2.
-      The passage to $\Sigma_n(x)$ is therefore not a modelling choice but the minimal
-      construction required to escape the representation-theoretic obstruction and give the
-      redundancy functional a dynamics that can grow with the cascade.
-    \end{remark}
+  \begin{remark}[Structural necessity of the coarse-grained capacity]
+    \label{rem:necessity}
+    The introduction of a coarse-grained capacity $\Sigma_n(x)$ is not optional.
+    Any attempt to characterise admissible redundancy at fixed representation level necessarily
+    leads to saturation within bounded BFS depth, as proved in O6, Proposition~6.2.
+    The passage to $\Sigma_n(x)$ is therefore not a modelling choice but the minimal
+    construction required to escape the representation-theoretic obstruction and give the
+    redundancy functional a dynamics that can grow with the cascade.
+  \end{remark}
 
   \section{Background and Notation}
   \label{sec:background}
@@ -266,18 +271,18 @@
       \label{tab:dict}
       \begin{tabular}{lll}
         \toprule
-        Continuous (B.14, \cite{Cosmochrony}) & Discrete (O7)                                & Role
+        Continuous (B.14, \cite{Cosmochrony}) & Discrete (O7) & Role
         \\
         \midrule
-        $\Sigma(x,t) = \sum_n w_n A_n^{\max}$ & $\Sigma_n(x)$                                & Local projective capacity
+        $\Sigma(x,t) = \sum_n w_n A_n^{\max}$ & $\Sigma_n(x)$ & Local projective capacity
         \\
-        $|\psi(x,t)|^2$                       & $|\psi_n(x)|^2 = |S_n\cap C_x|/|C_x|$        & Projected density
+        $|\psi(x,t)|^2$ & $|\psi_n(x)|^2 = |S_n\cap C_x|/|C_x|$ & Projected density
         \\
-        $\eta = |\psi|^2/\Sigma$              & $\eta_n(x) = |\psi_n(x)|^2/\Sigma_n(x)$      & Projective occupancy
+        $\eta = |\psi|^2/\Sigma$ & $\eta_n(x) = |\psi_n(x)|^2/\Sigma_n(x)$ & Projective occupancy
         \\
-        $g = \gamma/\Sigma$                   & $g_n(x) = \gamma/\Sigma_n(x)$                & Effective coupling
+        $g = \gamma/\Sigma$ & $g_n(x) = \gamma/\Sigma_n(x)$ & Effective coupling
         \\
-        $g|\psi|^2\psi$                       & $g_n\,|\psi_n|^2\psi_n = \gamma\eta_n\psi_n$ & Saturation pressure
+        $g|\psi|^2\psi$ & $g_n\,|\psi_n|^2\psi_n = \gamma\eta_n\psi_n$ & Saturation pressure
         \\
         \bottomrule
       \end{tabular}
