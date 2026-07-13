@@ -1,5 +1,5 @@
 This repository contains the source of the **O7** Cosmochrony paper  
-[*Projective Capacity and the Continuum Limit of Admissible Redundancy*](out/SpectralO7.pdf).
+*Projective Capacity and the Continuum Limit of Admissible Redundancy*.
 
 This work completes the **spectral redundancy programme** by resolving the
 obstruction identified in O6: the impossibility of extracting the cascade
