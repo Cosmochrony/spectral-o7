@@ -33,7 +33,7 @@ The admissible frontier is then governed by a **state equation**:
 where $\Phi$ is a monotone decreasing function with:
 
 - $\Phi(0) = 1$ (unsaturated regime)
-- $\Phi(1) = 0$ (full saturation)
+- $\Phi(1) = 1/\sqrt{2}$ (half-occupancy scale)
 
 # Main Results
 
