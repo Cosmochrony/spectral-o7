@@ -65,7 +65,7 @@ In this picture:
 
 # Position in the Programme
 
-- **O4**: upper bound on $\beta$ from admissibility constraints
+- **O4**: no bound on $\beta$ follows from the bounded-flux and Cheeger argument (candidate open)
 - **O5**: vertex-level saturation obstruction
 - **O6**: universal representation-theoretic saturation (no-go)
 - **O7**: emergence of a **capacity-driven continuum description**

@@ -53,7 +53,7 @@
   \small Independent Researcher; \texttt{jerome.beau@cosmochrony.org}
 }
 
-\date{March 2026\\[2pt]\small Version 1.15.2}
+\date{March 2026\\[2pt]\small Version 1.16}
 
 \begin{document}
 
@@ -62,8 +62,8 @@
   \begin{abstract}
     The Cosmochrony spectral cascade programme has progressively constrained the exponent~$\beta$
     governing the growth $p(n) \sim n^\beta$ of the effective relational valence.
-    O4 established $\beta \leq 1$ from Born--Infeld saturation and the Cheeger isoperimetric
-    inequality.
+    O4 showed that no bound on $\beta$ follows from the argument combining Born--Infeld saturation
+    with the Cheeger isoperimetric inequality.
     O5 and O6 proved that vertex-level and fixed-representation fingerprints saturate within
     bounded BFS depth, independent of~$q$, and O6, Proposition~6.2 formalised this as a universal
     no-go: no fingerprint based on a fixed finite-dimensional representation can produce the
@@ -123,11 +123,14 @@
     Three successive structural results have been established.
 
     \paragraph{O4~\cite{Beau2026a8}.}
-      The bounded-flux constraint $|\partial_t\chi_v| \leq c_{\mathrm{BI}}$, inherited from Born--Infeld
-      saturation, combined with the Cheeger isoperimetric inequality for Ramanujan--LPS graphs,
-      gives $\Delta p(n) \lesssim c_{\mathrm{BI}}\sqrt{p(n)}$, hence the structural upper bound $\beta \leq 1$
-      (in the rescaled convention of~\cite{Beau2026a8}).
-      This bound excludes super-quadratic growth but does not explain the gap to $\beta^* \approx 0.10$.
+      O4 examines whether the bounded-flux constraint $|\partial_t\chi_v| \leq c_{\mathrm{BI}}$, inherited
+      from Born--Infeld saturation, combined with the Cheeger isoperimetric inequality for
+      Ramanujan--LPS graphs, bounds $\beta$.
+      No bound follows from the stated argument: the front-size estimate
+      $\Delta p(n) \lesssim c_{\mathrm{BI}}\sqrt{p(n)}$ rests on three independent defects, and its repair
+      requires structure not supplied by the bounded-flux axiom or the LPS construction.
+      In the raw exponent of O3, the candidate bound would read $\beta \leq 2$, not $\beta \leq 1$; it is
+      not established.
 
     \paragraph{O5~\cite{Beau2026a9}.}
       The vertex-based admissible span satisfies $\dim\Pi_A(S_n) \leq |\mathrm{Cl}(G)| = O(q)$,
@@ -228,7 +231,8 @@
 
   \begin{remark}[Scope of the exponent window]
     References in this paper to $\alpha,\delta \in [7.4,10.6]$ and to
-    $\beff=1/(1/2+\alpha)$ belong to the reduced-model/LPS growth equation.
+    $\beff=1/(1/2+\alpha)$ belong to the reduced-model/LPS growth equation, itself the unestablished
+    hypothesis~(G) of O6~\cite{Beau2026a10}.
     They do not license substitution of the fixed-degree Heisenberg pair-capacity
     exponent into that equation.  The native Heisenberg audit shows that the latter
     cross-substrate prescription has no growth carrier in the frozen corpus
@@ -562,8 +566,10 @@
   \subsection{Reinterpretation of the O6 scaling relation}
     \label{ssec:reinterp}
 
-    O6 establishes (Proposition~4.2 of~\cite{Beau2026a10}): if $R_n \sim p(n)^{-\alpha}$ in
-    the pre-saturation window, then
+    O6 establishes (Proposition~4.2 of~\cite{Beau2026a10}), under two premises: if the square-root
+    growth inequality $dp/dn \lesssim c_{\mathrm{BI}}\sqrt{p(n)}$ holds on the LPS cascade, an
+    unestablished hypothesis there called~(G), with $R_n$ inserted multiplicatively, and if
+    $R_n \sim p(n)^{-\alpha}$ in the pre-saturation window, then
     \begin{equation}
       \label{eq:beff}
       \beff = \frac{1}{1/2+\alpha}.
@@ -588,7 +594,8 @@
       \end{equation}
       i.e. the capacity decays as $\Sigma_n \sim p(n)^{\beta_\psi - \alpha}$,
       where $\beta_\psi$ is the exponent of growth of the coarse-grained density $|\psi_n|^2$.
-      The effective cascade exponent is then $\beff = 1/(1/2+\alpha)$ (equation~\eqref{eq:beff}).
+      Granted hypothesis~(G) of O6, the effective cascade exponent is then $\beff = 1/(1/2+\alpha)$
+      (equation~\eqref{eq:beff}).
     \end{proposition}
 
     \begin{remark}[Status of Proposition~\ref{prop:beta-capacity}]
@@ -966,7 +973,7 @@
       Paper     & Mechanism                  & Status of $\beta$                                 \\
       \midrule
       O3        & Charged-lepton mass ratios & Phenomenological target $\beta^* \in (0.09,0.13)$ \\
-      O4        & Born--Infeld + Cheeger     & Structural upper bound $\beta \leq 1$             \\
+      O4        & Born--Infeld + Cheeger     & No bound follows; candidate $\beta \leq 2$ (raw) open \\
       O5        & Vertex admissibility       & Not measurable: O($q$) saturation                 \\
       O6        & Steinberg-matrix           & Not measurable: bounded-depth saturation; no-go   \\
       O7        & Capacity + state law       & Reinterpreted as capacity growth exponent         \\
