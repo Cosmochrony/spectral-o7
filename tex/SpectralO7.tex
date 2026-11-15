@@ -66,8 +66,11 @@
     with the Cheeger isoperimetric inequality.
     O5 and O6 proved that vertex-level and fixed-representation fingerprints saturate within
     bounded BFS depth, independent of~$q$, and O6, Proposition~6.2 formalised this as a universal
-    no-go: no fingerprint based on a fixed finite-dimensional representation can produce the
-    power-law decay $R_n \sim p(n)^{-\alpha}$ required to close on $\beta^* \in (0.09, 0.13)$.
+    no-go: no fingerprint based on a fixed finite-dimensional representation can produce a
+    power-law decay $R_n \sim p(n)^{-\alpha}$ in a growing window.
+    Under an unestablished effective growth hypothesis, O6 bounds $\beta$ from above by
+    $1/(1/2+\alpha)$; this bound lies inside $\beta^* = (0.09, 0.13)$ only for large $\alpha$, and it
+    never selects $\beta^*$.
 
     The present paper introduces the bridge between this discrete obstruction and the nonlinear
     projected dynamics derived in Appendix~B.14 of the Cosmochrony white paper~\cite{Cosmochrony},
@@ -149,8 +152,10 @@
 
       The logical consequence is unambiguous: overcoming the O6 obstruction requires a fingerprint
       space that grows with BFS depth, or a genuinely dynamical memory mechanism.
-      O6, Corollary~4.4 sets the target precisely: construct a fingerprint with a power-law decay
-      $R_n \sim p(n)^{-\alpha}$, $\alpha \in [7.4, 10.6]$.
+      O6, Corollary~4.4 gives only a necessary condition: under its effective growth
+      hypothesis~(G$_R$), a power-law decay $R_n \sim p(n)^{-\alpha}$ is compatible with $\beta^*$ only if
+      $\alpha < 10.611$; for $\alpha \in [7.4, 10.6]$ its upper bound on $\beta$ lies inside $\beta^*$, without
+      selecting it.
 
       \begin{remark}[Scope of O7 relative to O6]
         \label{rem:o7-scope}
@@ -208,7 +213,7 @@
     matching the three qualitative regimes of B.14.
 
     \item \textbf{$\beta$ as capacity growth exponent} (Section~\ref{sec:beta}).
-    The O6 formula $\beff = 1/(1/2+\alpha)$ is reinterpreted: $\alpha$ is the exponent of
+    The O6 bound $\beff \leq 1/(1/2+\alpha)$ is reinterpreted: $\alpha$ is the exponent of
     decay of the capacity $\Sigma_n \sim p(n)^{-\alpha}$, making $\beta$ a structural property
     of the projective capacity dynamics.
 
@@ -230,9 +235,12 @@
   \end{remark}
 
   \begin{remark}[Scope of the exponent window]
-    References in this paper to $\alpha,\delta \in [7.4,10.6]$ and to
-    $\beff=1/(1/2+\alpha)$ belong to the reduced-model/LPS growth equation, itself the unestablished
-    hypothesis~(G) of O6~\cite{Beau2026a10}.
+    References in this paper to $\alpha,\delta \in [7.4,10.6]$ and to the bound
+    $\beff \leq 1/(1/2+\alpha)$ belong to the reduced-model/LPS growth inequality, the unestablished
+    effective growth hypothesis~(G$_R$) of O6~\cite{Beau2026a10}, which does not follow from O6's
+    square-root hypothesis~(G) alone.
+    The interval is the range in which that upper bound lies inside $\beta^*$; it is neither
+    necessary nor sufficient for $\beta \in \beta^*$, for which only $\alpha < 10.611$ is necessary.
     They do not license substitution of the fixed-degree Heisenberg pair-capacity
     exponent into that equation.  The native Heisenberg audit shows that the latter
     cross-substrate prescription has no growth carrier in the frozen corpus
@@ -269,13 +277,13 @@
     The redundancy functional is $R_n^{(k)} = |\partial^{\mathrm{eff},k}S_n|/|\partial S_n|$,
     the fraction of boundary vertices contributing at least one genuinely new fingerprint direction.
 
-  \subsection{The O6 target and the B.14 dictionary}
+  \subsection{The O6 condition and the B.14 dictionary}
     \label{ssec:target-dict}
 
-    O6, Corollary~4.4 specifies, granted its growth hypothesis~(G): if $R_n \sim p(n)^{-\alpha}$ with
-    $\alpha \in [7.4, 10.6]$,
-    then $\beff = 1/(1/2+\alpha)$ falls in $\beta^* \in (0.09, 0.13)$.
-    The Steinberg-matrix fingerprint fails this condition.
+    O6, Corollary~4.4 states, under its effective growth hypothesis~(G$_R$): if $R_n \sim p(n)^{-\alpha}$,
+    then $\beff \leq 1/(1/2+\alpha)$, so that $\beff \in \beta^* = (0.09, 0.13)$ is possible only if
+    $\alpha < 10.611$; no lower bound on $\beff$ follows.
+    The Steinberg-matrix fingerprint does not satisfy the power-law Ansatz.
 
     Table~\ref{tab:dict} records the B.14 quantities used throughout this paper.
 
@@ -515,8 +523,9 @@
       If $\eta_n \sim p(n)^\alpha$ then $R_n \approx \Phi(\eta_n) \sim p(n)^{-\alpha}$,
       which is exactly the power-law Ansatz of O6, Hypothesis~3.2.
       The reduced model therefore predicts $\alpha = 1$ (exponent of $\eta$ growth),
-      corresponding to $\beff = 1/(1/2+1) = 2/3$.
-      The target $\alpha \in [7.4, 10.6]$ requires LPS corrections to the reduced model
+      corresponding, under~(G$_R$), to the upper bound $\beff \leq 1/(1/2+1) = 2/3$.
+      Bringing that bound inside $\beta^*$, as for $\alpha \in [7.4, 10.6]$, requires LPS corrections to
+      the reduced model
       (Conjecture~\ref{conj:statelaw-LPS} and open problem O7-O3 in Section~\ref{sec:structural}).
     \end{remark}
 
@@ -567,14 +576,16 @@
   \subsection{Reinterpretation of the O6 scaling relation}
     \label{ssec:reinterp}
 
-    O6 establishes (Proposition~4.2 of~\cite{Beau2026a10}), under two premises: if the square-root
-    growth inequality $dp/dn \lesssim c_{\mathrm{BI}}\sqrt{p(n)}$ holds on the LPS cascade, an
-    unestablished hypothesis there called~(G), with $R_n$ inserted multiplicatively, and if
-    $R_n \sim p(n)^{-\alpha}$ in the pre-saturation window, then
+    O6 establishes (Proposition~4.2 of~\cite{Beau2026a10}), under two premises: if the effective
+    growth inequality $dp/dn \lesssim R_n\, c_{\mathrm{BI}}\sqrt{p(n)}$ holds on the LPS cascade, an
+    unestablished hypothesis there called~(G$_R$), which does not follow from the square-root
+    hypothesis~(G) without $R_n$, and if $R_n \sim p(n)^{-\alpha}$ in the pre-saturation window, then
     \begin{equation}
       \label{eq:beff}
-      \beff = \frac{1}{1/2+\alpha}.
+      \beff \leq \frac{1}{1/2+\alpha}.
     \end{equation}
+    The premises give no lower bound on $\beff$: O6 exhibits exact power laws satisfying both with
+    $\beta$ strictly below the bound.
     In the O7 framework, the condition $R_n \sim p(n)^{-\alpha}$ is a condition on the occupancy
     growth: from Remark~\ref{rem:powerlaw},
     \begin{equation}
@@ -595,26 +606,27 @@
       \end{equation}
       i.e. the capacity decays as $\Sigma_n \sim p(n)^{\beta_\psi - \alpha}$,
       where $\beta_\psi$ is the exponent of growth of the coarse-grained density $|\psi_n|^2$.
-      Granted hypothesis~(G) of O6, the effective cascade exponent is then $\beff = 1/(1/2+\alpha)$
-      (equation~\eqref{eq:beff}).
+      Granted hypothesis~(G$_R$) of O6, the effective cascade exponent then satisfies
+      $\beff \leq 1/(1/2+\alpha)$ (equation~\eqref{eq:beff}).
     \end{proposition}
 
     \begin{remark}[Status of Proposition~\ref{prop:beta-capacity}]
       \label{rem:beta-status}
-      Equation~\eqref{eq:sigma-decay} is a \emph{rewriting} of the O6 formula in capacity language.
+      Equation~\eqref{eq:sigma-decay} is a \emph{rewriting} of the O6 bound in capacity language.
       It replaces the empirical condition ``$R_n$ decays as a power law'' with ``$\Sigma_n$ decays
       as a power law of $p(n)$'': the exponent $\beta$ is now the exponent governing the capacity
       dynamics, in principle accessible to thermodynamic arguments on~$\chi$.
       A first-principles derivation of the capacity growth law is identified as open
       problem O7-O4 in Section~\ref{sec:structural}.
-      The formula does not introduce a new derivation of $\beta$: it recasts the O6 target in
-      capacity language without circularity.
+      The formula does not introduce a new derivation of $\beta$: it recasts O6's necessary condition
+      in capacity language without circularity.
     \end{remark}
 
   \subsection{Target reformulation}
     \label{ssec:target}
 
-    The O6 target --- construct a fingerprint with $\alpha \in [7.4,10.6]$ --- is reformulated as:
+    The range in which O6's upper bound lies inside $\beta^*$ --- a fingerprint with
+    $\alpha \in [7.4,10.6]$ --- is reformulated as:
 
     \begin{center}
       \textit{Find a scale $\ell$ and depth $k$ such that}
@@ -622,6 +634,8 @@
       \textit{in the pre-saturation window.}
     \end{center}
 
+    Reaching this range would make the upper bound informative; it would not select $\beta^*$, and under
+    (G$_R$) only $\alpha < 10.611$ is necessary for $\beta \in \beta^*$.
     This shifts the question from ``what dimension of representation?'' to ``what rate of
     capacity exhaustion?'' --- a question that may be more accessible to spectral and
     thermodynamic arguments on the substrate $\chi$.
@@ -836,7 +850,7 @@
   \textbf{(c)}~coarse-grained capacity $\bar\Sigma_n$ vs step~$n$ (log-log, reduced model,
   three values of~$D$) with power-law fits;
   \textbf{(d)}~parameter table: ambient dimension~$D$, fitted decay exponent,
-  implied $\beff$, and fit quality~$R^2$.
+  implied upper bound $1/(1/2+\alpha)$ on $\beff$ (column $\beta_{\mathrm{eff}}$), and fit quality~$R^2$.
 
   \begin{remark}[Notation convention for $\delta$ and $\alpha$]
     \label{rem:delta-alpha}
@@ -906,8 +920,8 @@
 
   The reduced model simulation (with $D = 9, 27, 81$) provides the primary
   numerical evidence for the state law $\Phi(\eta) = 1/\sqrt{1+\eta^2}$.
-  The state law framework is validated; the target exponent $\alpha \in [7.4, 10.6]$
-  requires either $k \geq 3$ with a representation of dimension growing with~$q$
+  The state law framework is validated; the range $\alpha \in [7.4, 10.6]$, in which O6's upper
+  bound lies inside $\beta^*$, requires either $k \geq 3$ with a representation of dimension growing with~$q$
   (such as the permutation representation on $\mathbb{P}^1(\mathbb{F}_q)$ of
   dimension $q+1$), or a larger ambient dimension accessible to the reduced model
   at $D \sim q^{2k}$ (open problem O7-O5).
@@ -953,11 +967,12 @@
       of $G = \PSL$ and the Born--Infeld saturation functional,
       without reference to the phenomenological window $\beta^*$.
 
-    \paragraph{O7-O5 (O8: $k = 3$ and target $\alpha$).}
+    \paragraph{O7-O5 (O8: $k = 3$ and the range of $\alpha$).}
       At $k = 3$, the ambient dimension is $D = 27$ and the expected pre-saturation window is
       $O(q^2)$ rather than $O(q)$.
-      Test whether $\alpha_3 \in [7.4, 10.6]$ can be reached in this regime, closing the
-      gap between the structural capacity law and the phenomenological target.
+      Test whether $\alpha_3 \in [7.4, 10.6]$ can be reached in this regime, where O6's upper bound
+      lies inside $\beta^*$; this would bound $\beta$ from above at the scale of the window, not
+      select $\beta^*$.
 
   \subsection{Hierarchy across the O-series}
   \label{ssec:hierarchy-table}
@@ -978,7 +993,7 @@
       O5        & Vertex admissibility       & Not measurable: O($q$) saturation                 \\
       O6        & Steinberg-matrix           & Not measurable: bounded-depth saturation; no-go   \\
       O7        & Capacity + state law       & Reinterpreted as capacity growth exponent         \\
-      O8 (open) & $k=3$ path fingerprints    & Target: $\delta \in [7.4, 10.6]$                  \\
+      O8 (open) & $k=3$ path fingerprints    & Bound in $\beta^*$ if $\delta \in [7.4, 10.6]$     \\
       \bottomrule
     \end{tabular}
   \end{table}
@@ -1023,7 +1038,8 @@
   description even in the absence of an explicit operator, providing a potential bridge toward
   standard spectral geometry frameworks.
   The next step is O8: test $k=3$, verify the state law in a longer window, and determine
-  whether the implied $\delta$ falls in $[7.4, 10.6]$.
+  whether the measured $\delta$ falls in $[7.4, 10.6]$, where the implied upper bound on $\beta$ lies
+  inside $\beta^*$.
 
   \appendix
 
@@ -1042,11 +1058,11 @@
   \begin{remark}[Reduced model predictions]
     \label{rem:reduced-predictions}
     The reduced model predicts $\alpha_{\mathrm red} = 1$ (from $\Phi(\eta) \approx \eta^{-1}$ at large~$\eta$),
-    corresponding to $\beff^{\mathrm red} = 2/3$.
-    This is above the target $\beta^* \in (0.09, 0.13)$ and reflects the uniform-distribution
-    approximation.
-    The LPS corrections are expected to increase $\alpha$ substantially; the target
-    $\alpha \in [7.4, 10.6]$ requires the full graph-theoretic structure.
+    corresponding, under~(G$_R$), to the upper bound $\beff^{\mathrm red} \leq 2/3$.
+    This bound lies above $\beta^* \in (0.09, 0.13)$, so it does not constrain $\beta$ to the window, and
+    it reflects the uniform-distribution approximation.
+    The LPS corrections are expected to increase $\alpha$ substantially; bringing the bound inside
+    $\beta^*$, as for $\alpha \in [7.4, 10.6]$, requires the full graph-theoretic structure.
   \end{remark}
 
   \section{Coarse-Graining Construction}
@@ -1070,7 +1086,8 @@
     \item Computation of $\Sigma_n(x)$, $\eta_n(x)$, $R_n^{(2)}(x)$ per cell.
     \item Figure~\ref{fig:statelaw}: $R_n^{(2)}$ vs $\eta_n$ with $\Phi(\eta) = 1/\sqrt{1+\eta^2}$.
     \item Figure~\ref{fig:collapse}: scaling collapse across~$q$.
-    \item Power-law fit of $\bar\Sigma_n$ vs $p(n)$; extraction of $\delta$, $\alpha$, $\beff$.
+    \item Power-law fit of $\bar\Sigma_n$ vs $p(n)$; extraction of $\delta$, $\alpha$ and the implied
+    upper bound on $\beff$.
   \end{enumerate}
 
   \clearpage

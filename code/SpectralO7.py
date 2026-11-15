@@ -446,7 +446,7 @@ def main():
     ax = axes[1, 1]
     ax.axis('off')
     if param_rows:
-        col_labels = [r'Model', r'$\alpha$', r'$\beta_{\rm eff}$', r'$R^2$']
+        col_labels = [r'Model', r'$\alpha$', r'$\beta_{\rm eff}\leq$', r'$R^2$']
         tbl = ax.table(
             cellText=param_rows,
             colLabels=col_labels,
