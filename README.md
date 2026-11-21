@@ -1,13 +1,14 @@
 This repository contains the source of the **O7** Cosmochrony paper  
 *Projective Capacity and the Continuum Limit of Admissible Redundancy*.
 
-This work completes the **spectral redundancy programme** by resolving the
-obstruction identified in O6: the impossibility of extracting the cascade
-exponent from fixed finite-dimensional representations due to bounded
-saturation depth.
+This work extends the **spectral redundancy programme** after the saturation
+results of O5 and O6: O5 bounds class-function vertex spans by $O(q)$, and O6's
+Steinberg-matrix fingerprint fills its $q^2$-dimensional span within a few BFS
+radii. O6 does not establish a no-go for every fixed finite-dimensional
+representation.
 
-While **O5–O6** establish that all static fingerprints necessarily saturate,
-they leave open a fundamental question: how can redundancy still produce a
+While the fingerprints examined in **O5–O6** saturate too quickly for exponent
+extraction, they leave open a fundamental question: how can redundancy still produce a
 non-trivial scaling law along the cascade?
 
 The present work introduces a **coarse-grained notion of projective capacity**
@@ -70,7 +71,7 @@ In this picture:
 - **O6**: Steinberg-matrix span of dimension $q^2$, filled within a few BFS radii (no general no-go)
 - **O7**: emergence of a **capacity-driven continuum description**
 
-O7 shows that the obstruction is not a dead end, but a signal that the
+O7 reads that saturation, as an interpretation, not as a dead end but as a sign that the
 correct observable is not exact redundancy, but its coarse-grained capacity.
 
 # Outlook
