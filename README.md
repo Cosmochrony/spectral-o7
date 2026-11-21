@@ -67,7 +67,7 @@ In this picture:
 
 - **O4**: no bound on $\beta$ follows from the bounded-flux and Cheeger argument (candidate open)
 - **O5**: vertex-level saturation obstruction
-- **O6**: universal representation-theoretic saturation (no-go)
+- **O6**: Steinberg-matrix span of dimension $q^2$, filled within a few BFS radii (no general no-go)
 - **O7**: emergence of a **capacity-driven continuum description**
 
 O7 shows that the obstruction is not a dead end, but a signal that the

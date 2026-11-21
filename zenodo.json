@@ -3,5 +3,6 @@
   "web_url": "https://cosmochrony.org/science/spectral/program/o7/",
   "main_tex": "tex/SpectralO7.tex",
   "zenodo_id": 19149773,
-  "doi": "10.5281/zenodo.19149773"
+  "doi": "10.5281/zenodo.19149773",
+  "notes": "Version 1.17. O6 2.0 withdraws its no-go for every fixed finite-dimensional representation and its saturation radius independent of q; O7 now imports only what O6 proves (span dimension q², no regrowth after a plateau, certified full rank at radius 4–5) and presents the coarse-grained capacity as motivated, not required. Prints the new titles of O6 and O5. No result of O7 is changed."
 }

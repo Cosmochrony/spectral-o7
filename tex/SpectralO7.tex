@@ -55,7 +55,7 @@
   \small Independent Researcher; \texttt{jerome.beau@cosmochrony.org}
 }
 
-\date{March 2026\\[2pt]\small Version 1.16}
+\date{March 2026\\[2pt]\small Version 1.17}
 
 \begin{document}
 
@@ -66,15 +66,16 @@
     governing the growth $p(n) \sim n^\beta$ of the effective relational valence.
     O4 showed that no bound on $\beta$ follows from the argument combining Born--Infeld saturation
     with the Cheeger isoperimetric inequality.
-    O5 and O6 proved that vertex-level and fixed-representation fingerprints saturate within
-    bounded BFS depth, independent of~$q$, and O6, Proposition~6.2 formalised this as a universal
-    no-go: no fingerprint based on a fixed finite-dimensional representation can produce a
-    power-law decay $R_n \sim p(n)^{-\alpha}$ in a growing window.
+    O5 bounded the span of vertex-level class-function encodings by $|\mathrm{Cl}(G)| = O(q)$, and
+    O6 showed that its Steinberg-matrix fingerprint spans a space of dimension $q^2$ that it fills
+    within a few BFS radii, after which the span cannot grow again; neither leaves a window in which a
+    power-law decay $R_n \sim p(n)^{-\alpha}$ could be measured.
+    O6 does not establish a no-go for every fixed finite-dimensional representation.
     Under an unestablished effective growth hypothesis, O6 bounds $\beta$ from above by
     $1/(1/2+\alpha)$; this bound lies inside $\beta^* = (0.09, 0.13)$ only for large $\alpha$, and it
     never selects $\beta^*$.
 
-    The present paper introduces the bridge between this discrete obstruction and the nonlinear
+    The present paper introduces the bridge between these discrete saturation results and the nonlinear
     projected dynamics derived in Appendix~B.14 of the Cosmochrony white paper~\cite{Cosmochrony},
     where the finite local spectral admissible capacity $\Sigma(x,t)$ and the projective
     occupancy $\eta = |\psi|^2/\Sigma$ give rise to the effective Gross--Pitaevskii equation
@@ -90,14 +91,15 @@
     $\eta \to \infty$, and $\Phi' < 0$.
     Numerical support is provided by reduced-model simulations for ambient dimensions
     $D \in \{9,27,81\}$ (corresponding to $k=2,3,4$ adjoint fingerprints), with the LPS graph
-    $X_{5,13}$ included as a reference confirming the bounded-depth pre-saturation predicted by O6.
+    $X_{5,13}$ included as a reference, where the $k=2$ fingerprint, which depends only on generator
+    pairs, saturates within the first BFS steps.
     We show that $\beta$ can be reread as the exponent governing the growth of~$\Sigma_n$ along the cascade.
     The Gross--Pitaevskii coupling of B.14 is then identified as the continuum image of the
     discrete saturation pressure $\gamma\eta_n\psi_n$.
 
     The central identification $R_n^{(k)} \approx \Phi(\eta_n)$ is established exactly in the
     reduced model and supported numerically; its full graph-theoretic derivation is left as an open problem.
-    This reframes the sequence of no-go results of O5--O6 as a positive convergence statement:
+    This reframes the saturation results of O5--O6 as a positive convergence statement:
     admissible redundancy is not merely a combinatorial obstruction count, but the microscopic
     precursor of a continuous projective dynamics whose nonlinear structure is already
     determined by the framework.
@@ -105,7 +107,7 @@
 
   \paragraph{Keywords.}
     projective capacity, admissible redundancy, cascade exponent, nonlinear dynamics, continuum limit,
-    spectral admissibility, bounded-depth saturation, coarse-graining, non-injective projection,
+    spectral admissibility, fingerprint saturation, coarse-graining, non-injective projection,
     Gross–Pitaevskii equation, effective coupling, emergent dynamics, capacity scaling
 
     \clearpage
@@ -116,7 +118,7 @@
   \section{Introduction}
   \label{sec:intro}
 
-  \subsection{The hierarchy of obstructions O4--O6}
+  \subsection{The prior results O4--O6}
     \label{ssec:hierarchy}
 
     The O-series of papers in the Cosmochrony spectral cascade programme has pursued a single
@@ -138,22 +140,25 @@
       not established.
 
     \paragraph{O5~\cite{Beau2026a9}.}
-      The vertex-based admissible span satisfies $\dim\Pi_A(S_n) \leq |\mathrm{Cl}(G)| = O(q)$,
-      giving a saturation threshold $|S^*| = O(q)$ beyond which no vertex contributes a new
-      admissible direction.
-      No vertex-level mechanism can produce $R_n \sim p(n)^{-\alpha}$.
+      The vertex-based admissible span satisfies $\dim\Pi_A(S_n) \leq |\mathrm{Cl}(G)| = O(q)$, so at
+      most $O(q)$ vertices contribute a new admissible direction; the cardinality at which a traversal
+      saturates is not bounded by this count.
+      No class-function vertex encoding examined in O5 leaves a window in which
+      $R_n \sim p(n)^{-\alpha}$ could be measured.
 
     \paragraph{O6~\cite{Beau2026a10}.}
-      The Steinberg-matrix fingerprint of ambient dimension $O(q^2)$ saturates at BFS depth~6
-      for all $q \in \{29,41,61\}$, independent of~$q$.
-      Proposition~6.2 of~\cite{Beau2026a10} proves the universal no-go: for any fixed
-      finite-dimensional representation $\rho$, there exists $k^*(\rho,p) < \infty$, independent
-      of~$q$, such that $\dim\Pi_\rho(S_n)$ stabilises for $n \geq k^*$.
-      The mechanism is the Hecke operator action of the LPS generators $\Omega_p$ on
-      $\mathrm{End}(V_\rho)$, which spans the full endomorphism algebra within bounded depth.
+      The Steinberg-matrix fingerprint, of ambient dimension $(q+1)^2$, spans a space of dimension
+      $q^2$, and its BFS-ball span cannot grow again after a plateau (Proposition~6.2
+      of~\cite{Beau2026a10}); on $X_{5,q}$ it reaches full rank at radius $4$--$5$ for
+      $q \in \{29,41,61\}$, a numerical result for these primes.
+      The saturation radius is bounded by the span dimension and by the graph diameter, both
+      growing with~$q$.
+      O6 does not prove a saturation radius independent of $q$ for every fixed finite-dimensional
+      representation; its version~1.2 stated one, and version~2.0 withdraws it.
 
-      The logical consequence is unambiguous: overcoming the O6 obstruction requires a fingerprint
-      space that grows with BFS depth, or a genuinely dynamical memory mechanism.
+      A pre-saturation window longer than the one O6 finds therefore requires another fingerprint,
+      another observable, or another graph family; O6 does not show that any one of these is
+      necessary.
       O6, Corollary~4.4 gives only a necessary condition: under its effective growth
       hypothesis~(G$_R$), a power-law decay $R_n \sim p(n)^{-\alpha}$ is compatible with $\beta^*$ only if
       $\alpha < 10.611$; for $\alpha \in [7.4, 10.6]$ its upper bound on $\beta$ lies inside $\beta^*$, without
@@ -161,12 +166,12 @@
 
       \begin{remark}[Scope of O7 relative to O6]
         \label{rem:o7-scope}
-        O7 does not attempt to overcome the representation-theoretic obstruction identified in O6.
-        It reformulates it in terms of a coarse-grained capacity $\Sigma_n(x)$ whose dynamics
-        admits a continuous description.
-        The obstruction is not circumvented but \emph{reinterpreted}: the bounded-depth saturation
-        of O6 is the microscopic signature of a projective capacity exhaustion that, in the
-        continuum limit, takes the form of the nonlinear dynamics of Appendix~B.14.
+        O7 does not attempt to lengthen the pre-saturation window that O6 finds too short.
+        It reformulates the redundancy question in terms of a coarse-grained capacity $\Sigma_n(x)$
+        whose dynamics admits a continuous description.
+        The saturation of O6's fingerprint is read here as one microscopic instance of projective
+        capacity exhaustion, which in the continuum limit takes the form of the nonlinear dynamics of
+        Appendix~B.14; this is an interpretation, not a consequence of O6.
       \end{remark}
 
   \subsection{What Appendix~B.14 of the white paper brings}
@@ -249,14 +254,14 @@
     \cite{Beau2026sgn}.
   \end{remark}
 
-  \begin{remark}[Structural necessity of the coarse-grained capacity]
+  \begin{remark}[Motivation for the coarse-grained capacity]
     \label{rem:necessity}
-    The introduction of a coarse-grained capacity $\Sigma_n(x)$ is not optional.
-    Any attempt to characterise admissible redundancy at fixed representation level necessarily
-    leads to saturation within bounded BFS depth, as proved in O6, Proposition~6.2.
-    The passage to $\Sigma_n(x)$ is therefore not a modelling choice but the minimal
-    construction required to escape the representation-theoretic obstruction and give the
-    redundancy functional a dynamics that can grow with the cascade.
+    The coarse-grained capacity $\Sigma_n(x)$ is introduced because exact span counts of the
+    fingerprints examined in O5 and O6 collapse abruptly at saturation and carry no rate
+    information.
+    O6 does not prove that every fixed-representation construction saturates within a bounded
+    radius, so the passage to $\Sigma_n(x)$ is a modelling choice motivated by these cases, not a
+    construction shown to be required.
   \end{remark}
 
   \section{Background and Notation}
@@ -835,7 +840,7 @@
       For completeness, we include data from the LPS graph $X_{5,13}$
       ($|G| = 4368$, $k=2$, adjoint fingerprint, cell size $\ell = 20$).
       The $k=2$ adjoint fingerprint at real dimension $D=9$ saturates within the first few
-      BFS steps (as expected from the O6 obstruction), confirming the structural limitation
+      BFS steps, since it depends only on generator pairs, illustrating the limitation
       discussed in Section~\ref{ssec:honest}.
       Despite this quick saturation, the 225 collected $({\eta},R)$ pairs are included
       in Figure~\ref{fig:statelaw} as a reference point.
@@ -912,9 +917,9 @@
   within the first few BFS steps: all 30 generator pairs are seen immediately,
   each contributing one linearly independent direction in~$\mathbb{R}^{81}$,
   after which no new directions can be added regardless of~$q$.
-  This is a direct confirmation of the O6 obstruction at this fingerprint level:
-  the span of generator-pair fingerprints is exhausted by the first BFS step,
-  leaving no pre-saturation window.
+  The span of generator-pair fingerprints is exhausted by the first BFS steps, leaving no
+  pre-saturation window; this follows from its dependence on generator pairs alone and is
+  independent of O6's results.
 
   The LPS points in Figures~\ref{fig:statelaw}--\ref{fig:collapse} therefore reflect
   only the transient pre-saturation behaviour at very small~$\eta$; they do not
@@ -934,8 +939,8 @@
   \subsection{What O7 resolves}
     \label{ssec:resolves}
 
-    O6 left the programme with every tested mechanism producing an algebraic saturation at
-    bounded depth.
+    O6 left the programme with every tested fingerprint saturating too quickly for exponent
+    extraction.
     O7 resolves this at the conceptual level by:
     identifying $\Sigma_n(x)$ as the correct object encoding projective capacity at the discrete level;
     establishing the state law $R_n^{(k)} \approx \Phi(\eta_n)$ in the reduced model;
@@ -943,7 +948,7 @@
     showing that the Gross--Pitaevskii structure of B.14 is the continuum image of the
     discrete saturation pressure.
 
-    This transforms the sequence of no-go results into a positive statement:
+    This transforms the sequence of saturation results into a positive statement:
     the admissible redundancy is not merely an obstruction count but the microscopic precursor
     of a projective dynamics whose nonlinear structure is already fixed by the Cosmochrony framework.
 
@@ -992,8 +997,8 @@
       \midrule
       O3        & Charged-lepton mass ratios & Phenomenological target $\beta^* \in (0.09,0.13)$ \\
       O4        & Born--Infeld + Cheeger     & No bound follows; candidate $\beta \leq 2$ (raw) open \\
-      O5        & Vertex admissibility       & Not measurable: O($q$) saturation                 \\
-      O6        & Steinberg-matrix           & Not measurable: bounded-depth saturation; no-go   \\
+      O5        & Vertex admissibility       & Not measurable: span dimension $O(q)$             \\
+      O6        & Steinberg-matrix           & Not measurable: span $q^2$ full at radius 4--5    \\
       O7        & Capacity + state law       & Reinterpreted as capacity growth exponent         \\
       O8 (open) & $k=3$ path fingerprints    & Bound in $\beta^*$ if $\delta \in [7.4, 10.6]$     \\
       \bottomrule
@@ -1008,9 +1013,9 @@
   novelty of $k$-step path fingerprints, as the discrete microscopic counterpart of the
   continuous spectral admissible capacity $\Sigma(x,t)$ of Appendix~B.14 of the Cosmochrony
   white paper.
-  $\Sigma_n(x)$ is the only observable that survives the O6 obstruction: every fixed-dimension
-  fingerprint saturates, but the capacity --- defined as the average residual novelty weighted by
-  path independence --- remains meaningful and dynamical throughout the cascade.
+  Where exact span counts of the fingerprints examined in O5 and O6 saturate, the capacity
+  --- defined as the average residual novelty weighted by path independence --- remains defined
+  throughout the cascade.
   We have proved in the reduced filling model the state law $R_n^{(k)}(x) \approx \Phi(\eta_n(x))$
   with $\Phi(\eta) = 1/\sqrt{1+\eta^2}$, satisfying $\Phi(0)=1$, $\Phi(\eta)\to 0$,
   and $\Phi' < 0$, and supported it numerically on $X_{5,q}$.
@@ -1031,7 +1036,7 @@
   remains the nonlinear Gross--Pitaevskii one of B.14.
 
   The sequence O4--O7 can now be read as a positive convergence:
-  not a succession of no-go results, but the progressive identification of the correct object
+  not a succession of saturation results, but the progressive identification of the correct object
   --- the projective capacity $\Sigma_n$ --- whose dynamics encodes $\beta$.
   This suggests that admissible redundancy is not merely a combinatorial limitation, but the
   microscopic origin of an effective nonlinear dynamics governing projected observables ---
